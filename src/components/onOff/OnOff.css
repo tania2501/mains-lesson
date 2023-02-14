@@ -1,0 +1,25 @@
+
+.off {
+  margin-right: 10px;
+}
+.off.active {
+  background-color: red;
+}
+.on.active {
+  background-color: green;
+}
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.color.active {
+  background-color: green;
+}
+.color.disable {
+  background-color: red;
+}
