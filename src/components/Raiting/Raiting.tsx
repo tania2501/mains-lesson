@@ -1,29 +1,28 @@
-import React from "react";
+import { spawn } from "child_process";
+import React, { useState } from "react";
 
-type RaitingPropsType = {
-    value: number;
+
+export function Raiting() {
+  let [value, setValue] = useState(0);
+
+  return (
+    <div>
+        <Star selected={value > 0} value={1} change={setValue}/>
+        <Star selected={value > 1} value={2} change={setValue}/>
+        <Star selected={value > 2} value={3} change={setValue}/>
+        <Star selected={value > 3} value={4} change={setValue}/>
+        <Star selected={value > 4} value={5} change={setValue}/>
+    </div>
+)
 }
-export function Raiting(props: RaitingPropsType) {
-    console.log('Raiting rendering')
-    return (
-      <div>
-          <Star selected={props.value > 0}/>
-          <Star selected={props.value > 1}/>
-          <Star selected={props.value > 2}/>
-          <Star selected={props.value > 3}/>
-          <Star selected={props.value > 4}/>
-      </div>
-  )
-}
+
 type StarPropsType = {
     selected: boolean;
+    value: number
+    change : (value: number)=>void
 }
 export function Star(props: StarPropsType) {
-    console.log('star rendering')
-    if (props.selected === true) {
-        return <span><b>star </b></span>
-    } else {
-        return <span>star </span>
-    }
+    
+    return props.selected ? <span ><b>star </b></span> : <span onClick={()=>props.change(props.value)}>star </span>
 
 }

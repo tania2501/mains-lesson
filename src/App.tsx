@@ -9,10 +9,10 @@ function App() {
   console.log("App rendering");
   return (
     <div>
-      <Accordion titleValue={"Menu"} collapsedValue={true} />
-      <Accordion titleValue={"Users"} collapsedValue={false} />
-      <Raiting value={2} />
-      <Raiting value={4} />
+      <Accordion titleValue={"Menu"}  />
+      <Accordion titleValue={"Users"} />
+      <Raiting />
+      <Raiting />
       <OnOff/>
       <OnOff/>
       <Todolist />
