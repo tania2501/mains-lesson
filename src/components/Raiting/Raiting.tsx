@@ -1,28 +1,29 @@
-import { spawn } from "child_process";
-import React, { useState } from "react";
+import React from "react";
 
-
-export function Raiting() {
-  let [value, setValue] = useState(0);
-
+type RaitingPropsType = {
+  value: number;
+  onChange: (value: number)=>void
+};
+export function Raiting(props: RaitingPropsType) {
   return (
     <div>
-        <Star selected={value > 0} value={1} change={setValue}/>
-        <Star selected={value > 1} value={2} change={setValue}/>
-        <Star selected={value > 2} value={3} change={setValue}/>
-        <Star selected={value > 3} value={4} change={setValue}/>
-        <Star selected={value > 4} value={5} change={setValue}/>
+      <Star selected={props.value > 0} onChange={props.onChange} value={1}/>
+      <Star selected={props.value > 1} onChange={props.onChange} value={2}/>
+      <Star selected={props.value > 2} onChange={props.onChange} value={3}/>
+      <Star selected={props.value > 3} onChange={props.onChange} value={4}/>
+      <Star selected={props.value > 4} onChange={props.onChange} value={5}/>
     </div>
-)
+  );
 }
-
 type StarPropsType = {
-    selected: boolean;
-    value: number
-    change : (value: number)=>void
-}
-export function Star(props: StarPropsType) {
-    
-    return props.selected ? <span ><b>star </b></span> : <span onClick={()=>props.change(props.value)}>star </span>
+  selected: boolean;
+  onChange: (value: number)=>void
+  value: number
+};
 
+export function Star(props: StarPropsType) {
+  return <span onClick={()=>{props.onChange(props.value)}}> 
+    {props.selected ? <b>star </b> : "star "}
+   </span>;
 }
+  

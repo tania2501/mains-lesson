@@ -1,9 +1,12 @@
-import React, { MouseEventHandler, useState } from "react";
+import React, { useState } from "react";
 import './OnOff.css';
 
-export const OnOff = () => {
+type ControlledType = {
+  on: boolean
+  changeOn: (on: boolean)=>void
+}
 
-  let [on, setOn] = useState(Boolean);
+export const ControlledOnOff = (props: ControlledType) => {
 
   const onStyle = {
     width: '30px',
@@ -12,7 +15,7 @@ export const OnOff = () => {
     marginRight: '2px',
     padding: '5px',
     textAlign: 'center' as const,
-    backgroundColor: on ? 'green' : 'white'
+    backgroundColor: props.on ? 'green' : 'white'
   };
   const offStyle = {
     width: '30px',
@@ -21,25 +24,20 @@ export const OnOff = () => {
     marginRight: '5px',
     padding: '5px',
     textAlign: 'center' as const,
-    backgroundColor: !on ? 'red' : 'white'
+    backgroundColor: !props.on ? 'red' : 'white'
   };
   const indicatorStyle = {
     width: '10px',
     height: '10px',
     borderRadius: '5px',
     border: '1px solid black',
-    backgroundColor: on ? 'green' : 'red'
+    backgroundColor: props.on ? 'green' : 'red'
   };
-  const onClick = () => {
-    setOn(true)
-  }
-  const offClick = () => {
-    setOn(false)
-  }
+
   return (
     <div className="button">
-      <div style={onStyle} onClick={onClick}>On</div>
-      <div style={offStyle} onClick={offClick}>Off</div>
+      <div style={onStyle} onClick={()=>props.changeOn(true)}>On</div>
+      <div style={offStyle} onClick={()=>props.changeOn(false)}>Off</div>
       <div style={indicatorStyle}></div>
     </div>
   )

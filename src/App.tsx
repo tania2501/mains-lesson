@@ -1,20 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import Accordion from "./components/Accordion/Accordion";
+import { Accordion } from "./components/Accordion/Accordion";
+import  { UncontrolledAccordion } from "./components/Accordion/UncontrolledAccordion";
 import { Todolist } from "./components/back/Todolist";
+import { ControlledOnOff } from "./components/onOff/ControlledOnOff";
 import { OnOff } from "./components/onOff/OnOff";
 import { Raiting, Star } from "./components/Raiting/Raiting";
+import { UncontrolledRaiting } from "./components/Raiting/UncontrolledRaiting";
+
+
+
 
 function App() {
-  console.log("App rendering");
+  let [value, setValue] = useState(0);
+  let [collapsed, setCollapsed] = useState(false);
+  let [on, setOn] = useState(false)
+
   return (
     <div>
-      <Accordion titleValue={"Menu"}  />
-      <Accordion titleValue={"Users"} />
-      <Raiting />
-      <Raiting />
+      <Accordion titleValue={"Menu"} collapsedValue={collapsed} onChange={()=>{setCollapsed(!collapsed)}}/>
+      <UncontrolledAccordion titleValue={"Menu"}  />
+      <Raiting value={value} onChange={setValue}/>
+      <UncontrolledRaiting/>
       <OnOff/>
-      <OnOff/>
+      <ControlledOnOff on={on} changeOn={(on)=>{setOn(on)}}/>
       <Todolist />
     </div>
   );
