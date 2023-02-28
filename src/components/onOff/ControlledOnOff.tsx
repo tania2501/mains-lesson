@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './OnOff.css';
 
-type ControlledType = {
+export type ControlledType = {
   on: boolean
   changeOn: (on: boolean)=>void
 }

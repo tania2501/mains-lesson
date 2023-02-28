@@ -5,7 +5,7 @@ import  { UncontrolledAccordion } from "./components/Accordion/UncontrolledAccor
 import { Todolist } from "./components/back/Todolist";
 import { ControlledOnOff } from "./components/onOff/ControlledOnOff";
 import { OnOff } from "./components/onOff/OnOff";
-import { Raiting, Star } from "./components/Raiting/Raiting";
+import { Rating, Star } from "./components/Raiting/Raiting";
 import { UncontrolledRaiting } from "./components/Raiting/UncontrolledRaiting";
 
 
@@ -20,7 +20,7 @@ function App() {
     <div>
       <Accordion titleValue={"Menu"} collapsedValue={collapsed} onChange={()=>{setCollapsed(!collapsed)}}/>
       <UncontrolledAccordion titleValue={"Menu"}  />
-      <Raiting value={value} onChange={setValue}/>
+      <Rating value={value} onChange={setValue}/>
       <UncontrolledRaiting/>
       <OnOff/>
       <ControlledOnOff on={on} changeOn={(on)=>{setOn(on)}}/>

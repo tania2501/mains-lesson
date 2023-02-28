@@ -1,10 +1,10 @@
 import React from "react";
 
-type RaitingPropsType = {
+export type RaitingPropsType = {
   value: number;
   onChange: (value: number)=>void
 };
-export function Raiting(props: RaitingPropsType) {
+export function Rating(props: RaitingPropsType) {
   return (
     <div>
       <Star selected={props.value > 0} onChange={props.onChange} value={1}/>
