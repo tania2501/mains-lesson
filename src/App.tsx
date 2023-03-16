@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div>
-      <Accordion titleValue={"Menu"} collapsedValue={collapsed} onChange={()=>{setCollapsed(!collapsed)}}/>
+      <Accordion titleValue={"Menu"} collapsedValue={collapsed} onChange={()=>{setCollapsed(!collapsed)}} items={[]}/>
       <UncontrolledAccordion titleValue={"Menu"}  />
       <Rating value={value} onChange={setValue}/>
       <UncontrolledRaiting/>
