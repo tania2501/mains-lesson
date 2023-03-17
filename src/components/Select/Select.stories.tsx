@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
 import { Select } from "./Select";
 
@@ -7,26 +7,32 @@ export default {
   component: Select,
 };
 
-export const Base = () =>  <Select
-    onChange={action("Value changed")}
-    value={"1"}
-    items={[
-      { value: "1", title: "Bratislava" },
-      { value: "2", title: "Vienna" },
-      { value: "3", title: "Paris" },
-    ]}
-  />
+export const Base = () => {
+  const [value, setValue] = useState('1');
 
-export const WithOutValue = () => {
   return (
     <Select
-    onChange={action("Value changed")}
-    items={[
-      { value: "1", title: "Bratislava" },
-      { value: "2", title: "Vienna" },
-      { value: "3", title: "Paris" },
-    ]}
-  />
-  )
+      onChange={setValue}
+      value={value}
+      items={[
+        { value: "1", title: "Bratislava" },
+        { value: "2", title: "Vienna" },
+        { value: "3", title: "Paris" },
+      ]}
+    />
+  );
 };
-
+export const WithOutValue = () => {
+  const [value, setValue] = useState(null)
+  return (
+    <Select
+      onChange={setValue}
+      value={value}
+      items={[
+        { value: "1", title: "Bratislava" },
+        { value: "2", title: "Vienna" },
+        { value: "3", title: "Paris" },
+      ]}
+    />
+  );
+};

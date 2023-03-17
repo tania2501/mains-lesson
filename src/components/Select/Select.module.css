@@ -1,7 +1,14 @@
-.select {
+.select span {
   border: 1px solid black;
+  display: inline-block;
+  min-height: 20px;
+  min-width: 80px;
 }
 .items {
   border: 1px solid red;
   position: absolute;
+}
+.active {
+  background-color: blue;
+  color: bisque;
 }
