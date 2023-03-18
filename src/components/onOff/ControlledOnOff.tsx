@@ -6,7 +6,7 @@ export type ControlledType = {
   changeOn: (on: boolean)=>void
 }
 
-export const ControlledOnOff = (props: ControlledType) => {
+export const ControlledOnOffSecret = (props: ControlledType) => {
 
   const onStyle = {
     width: '30px',
@@ -42,3 +42,4 @@ export const ControlledOnOff = (props: ControlledType) => {
     </div>
   )
 }
+const ControlledOnOff = React.memo(ControlledOnOffSecret);
