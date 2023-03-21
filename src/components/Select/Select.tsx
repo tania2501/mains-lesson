@@ -1,9 +1,11 @@
 import React, {useState, KeyboardEvent, useEffect} from "react";
 import s from "./Select.module.css";
 
-type ItemsType = {
+export type ItemsType = {
   title: string;
   value: any;
+  people?: number
+  country?: string
 };
 type SelectPropsType = {
   onChange: (value: any) => void;
@@ -11,7 +13,7 @@ type SelectPropsType = {
   items: ItemsType[];
 };
 
-export const SelectSecret = (props: SelectPropsType) => {
+const SelectSecret = (props: SelectPropsType) => {
 
   const [hoveredItem, setHoveredItem] = useState(props.value);
   const [active, setActive] = useState(false);
@@ -69,4 +71,4 @@ export const SelectSecret = (props: SelectPropsType) => {
     </div>
   );
 };
-const Select = React.memo(SelectSecret);
+export const Select = React.memo(SelectSecret);

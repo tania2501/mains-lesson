@@ -2,7 +2,7 @@ import React, { useState } from "react";
 type AccordionPropsType = {
   titleValue: string;
 };
-export function UncontrolledAccordionSecret(props: AccordionPropsType) {
+function UncontrolledAccordionSecret(props: AccordionPropsType) {
   let [collapsed, setCollapsed] = useState(Boolean);
 
   return (
@@ -12,7 +12,7 @@ export function UncontrolledAccordionSecret(props: AccordionPropsType) {
     </div>
   );
 }
-const  UncontrolledAccordion = React.memo(UncontrolledAccordionSecret);
+export const  UncontrolledAccordion = React.memo(UncontrolledAccordionSecret);
 type CollapsedType = {
   collapsed: boolean
   title: string
@@ -25,7 +25,7 @@ function AccordionTitleSecret(props: CollapsedType) {
     </div>
   );
 }
-const AccordionTitle = React.memo(AccordionTitleSecret);
+export const AccordionTitle = React.memo(AccordionTitleSecret);
 function AccordionBodySecret() {
   return (
     <ul>
@@ -37,4 +37,4 @@ function AccordionBodySecret() {
     </ul>
   );
 }
-const AccordionBody =React.memo(AccordionBodySecret);
+export const AccordionBody =React.memo(AccordionBodySecret);

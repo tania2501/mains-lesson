@@ -15,9 +15,9 @@ export const Base = () => {
       onChange={setValue}
       value={value}
       items={[
-        { value: "1", title: "Bratislava" },
-        { value: "2", title: "Vienna" },
-        { value: "3", title: "Paris" },
+        { value: "1", title: "Bratislava"},
+        { value: "2", title: "Vienna"},
+        { value: "3", title: "Paris"},
       ]}
     />
   );
@@ -29,9 +29,9 @@ export const WithOutValue = () => {
       onChange={setValue}
       value={value}
       items={[
-        { value: "1", title: "Bratislava" },
-        { value: "2", title: "Vienna" },
-        { value: "3", title: "Paris" },
+        { value: "1", title: "Bratislava"},
+        { value: "2", title: "Vienna"},
+        { value: "3", title: "Paris"},
       ]}
     />
   );

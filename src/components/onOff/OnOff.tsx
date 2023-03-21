@@ -1,7 +1,7 @@
 import React, { MouseEventHandler, useState } from "react";
 import './OnOff.css';
 
-export const OnOffSecret = () => {
+const OnOffSecret = () => {
 
   let [on, setOn] = useState(Boolean);
 
@@ -44,4 +44,4 @@ export const OnOffSecret = () => {
     </div>
   )
 }
-const OnOff = React.memo(OnOffSecret);
+export const OnOff = React.memo(OnOffSecret);
