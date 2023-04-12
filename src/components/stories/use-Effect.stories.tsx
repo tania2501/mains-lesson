@@ -34,19 +34,3 @@ export const SimpleExample = () => {
     </>
   );
 };
-export const SetTime = () => {
-  const [date, setDate] = useState<Date>(new Date(Date.now()))
-
-  useEffect(() => {
-    setInterval ( ()=> {
-      setDate(new Date())
-    }, 1000)
-  }, []);
-
-  let time = date.toLocaleTimeString()
-  return (
-    <>
-      {time}
-    </>
-  );
-};
