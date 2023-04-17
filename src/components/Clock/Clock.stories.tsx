@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { Clock } from "./Clock";
 
 export default {
@@ -6,6 +6,10 @@ export default {
   component: Clock
 };
 
-export const SetTime = () => {
-  return <Clock/>
+export const DigitalClock = () => {
+  return <Clock mode={'digital'}/>
+};
+
+export const AnalogClock = () => {
+  return <Clock mode={'analog'}/>
 };
